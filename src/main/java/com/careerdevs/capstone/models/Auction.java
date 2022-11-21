@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+// TODO: @onetomany owner profile, @manytomany bidders: list of profiles
 @Entity
 public class Auction {
     @Id
@@ -13,7 +14,21 @@ public class Auction {
     private Long serialNumber;
     private String objectName;
     private String description;
-    private String tags;
+    private String tags; // entity @manytomany
+
+
+
+    public Auction() {
+
+    }
+
+    public Auction(Long id, Long serialNumber, String objectName, String description, String tags) {
+        this.id = id;
+        this.serialNumber = serialNumber;
+        this.objectName = objectName;
+        this.description = description;
+        this.tags = tags;
+    }
 
     public Long getId() {
         return id;
