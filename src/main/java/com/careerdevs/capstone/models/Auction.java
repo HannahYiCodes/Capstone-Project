@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 // TODO: @onetomany owner profile, @manytomany bidders: list of profiles
+// add other entities
 @Entity
 public class Auction {
     @Id
@@ -15,8 +16,6 @@ public class Auction {
     private String objectName;
     private String description;
     private String tags; // entity @manytomany
-
-
 
     public Auction() {
 
