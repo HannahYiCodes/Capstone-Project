@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
+@CrossOrigin
+@RestController
+@RequestMapping
 public class UserController {
-    @CrossOrigin
-    @RestController
-    @RequestMapping
-    public class UserController {
-
         @Autowired
         private UserRepository userRepository;
 
