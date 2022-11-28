@@ -16,4 +16,7 @@ import java.util.List;
 @RequestMapping("/api/auction")
 public class AuctionController {
 
+    // I am the auction master: everyone must obey me!
+    // every other user/player below me does not have administrative control
+    // there should be a middle ground to not full administrative access
 }
