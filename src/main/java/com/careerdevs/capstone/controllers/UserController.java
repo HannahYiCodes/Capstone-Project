@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -54,4 +56,27 @@ public class UserController {
             userRepository.save(authUser);
             return new ResponseEntity<>(authUser.getLoginToken(), HttpStatus.OK);
         }
+//    @PostMapping("/{bankId}/{loginToken}")
+//    public ResponseEntity<?> createCustomer(@RequestBody Customer newCustomerData, @PathVariable Long bankId) {
+//        // Find the bank by ID in the repository
+//        // If bank doesn't exist return bad request
+//        // If bank exist add to newCustomerData and save
+//        Bank requestedBank = bankRepository.findById(bankId).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST)); //user got us bad request or wrong data
+//        newCustomerData.setBank(requestedBank);
+//        Customer addedCustomer = customerRepository.save(newCustomerData);
+//        return new ResponseEntity<>(addedCustomer, HttpStatus.CREATED);
+//    }
+//
+//    @GetMapping("/")
+//    public ResponseEntity<?> getAllCustomersFromDB() {
+//        List<Customer> allCustomers = customerRepository.findAll();
+//        return new ResponseEntity<>(allCustomers, HttpStatus.OK);
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<?> getCustomerById(@PathVariable Long id) {
+//        Customer requestedCustomer = customerRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+//        return new ResponseEntity<>(requestedCustomer, HttpStatus.OK);
+//    }
+
 }
